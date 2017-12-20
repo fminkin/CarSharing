@@ -1,5 +1,5 @@
 
 
-class UserInfo(object):
+class Zone(object):
     def __init__(self):
         pass

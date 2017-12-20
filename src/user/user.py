@@ -1,3 +1,9 @@
+from enum import Enum
+
+
+class UserStatus(Enum):
+    NOT_APPROVED = 0,
+    APPROVED = 1
 
 
 class User(object):
@@ -24,4 +30,3 @@ class User(object):
 
     def change_balance(self, delta):
         pass
-    

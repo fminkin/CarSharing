@@ -1,3 +1,10 @@
+from enum import Enum
+
+
+class ChargeRateType(Enum):
+    MINUTELY = 0,
+    DAILY = 1,
+    CORPORATE = 2
 
 
 class Ride(object):
