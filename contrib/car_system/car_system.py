@@ -5,18 +5,16 @@ class ICarSystem(object):
         pass
 
     def check_systems(self):
-        pass
+        raise NotImplementedError("Pure virtual class")
 
     def open_auto(self):
-        pass
+        raise NotImplementedError("Pure virtual class")
 
     def close_auto(self):
-        pass
+        raise NotImplementedError("Pure virtual class")
 
     def subscribe_on_coords_change(self, subscriber):
-        pass
+        raise NotImplementedError("Pure virtual class")
 
     def subscribe_on_auto_state_change(self, subscriber):
-        pass
-
-    
+        raise NotImplementedError("Pure virtual class")

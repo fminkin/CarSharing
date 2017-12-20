@@ -7,6 +7,12 @@ class AutomobileState(Enum):
     SUSPENDED = 2
 
 
+class VehicleState(Enum):
+    ECONOM = 0,
+    COMFORT = 1,
+    BUSINESS = 2
+
+
 class Automobile(object):
     def __init__(self):
         pass
