@@ -5,6 +5,7 @@ from ..checkers.coords_checker import CoordsChecker
 from src.contrib.map_service.map_service_mock import MapServiceMock
 from ..car_pool.car_pool import CarPool
 
+
 class ERideState(Enum):
     UNINITIALIZED = 0,
     RESERVED = 1,
@@ -43,20 +44,26 @@ class RideStateMachine(object):
         return automobiles
 
     def vehicle_status_change_success(self):
-        pass
+        self.ride_state = ERideState.IN_PROGRESS
 
     def start_ride(self, photos):
-        pass
+        assert (self.ride)
+        self.ride.add_photos(photos)
+        result = self.ride.automobile.open_vehicle()
+        if result:
+            self.vehicle_status_change_success()
+        else:
+            self.ride_state = ERideState.CRITICAL_ISSUE
+        return result
 
     def reserve_auto(self, automobile, charge_rate):
-
         result = self.car_pool.reserve_car(automobile)
         if not result:
             return False
 
         automobile.book()
         self.ride = Ride(self.user, charge_rate, automobile)
-        # refactor this may be pass args to constructor
+        self.ride_state = ERideState.RESERVED
         return True
 
 

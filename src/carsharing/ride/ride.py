@@ -20,7 +20,7 @@ class Ride(object):
         pass
 
     def add_photos(self, photos):
-        pass
+        self.photos = photos
 
     def charge_user(self):
         pass

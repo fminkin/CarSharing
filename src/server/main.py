@@ -38,6 +38,11 @@ class Server(object):
         user = self.database.load_user(user_info)
         user.reserve_auto(automobile, charge_rate)
 
+    def start_ride_action_handle(self, user_info, photos):
+        user = self.database.load_user(user_info)
+        user.start_ride(photos)
+
+
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()

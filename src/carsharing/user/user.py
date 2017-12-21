@@ -50,7 +50,12 @@ class User(object):
         pass
 
     def start_ride(self, photos):
-        pass
+        result = self.ride_state_machine.start_ride(photos)
+        if not result:
+            self.user_interaction.receive_message("Fail")
+            # refactor this
+            return
+        self.user_interaction.receive_message("OK")
 
     def change_balance(self, delta):
         pass

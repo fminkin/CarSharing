@@ -7,7 +7,7 @@ class CarSystemMock(ICarSystem):
         pass
 
     def check_systems(self):
-        pass
+        return True
 
     def open_auto(self):
         pass
