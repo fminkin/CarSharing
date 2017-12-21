@@ -11,6 +11,7 @@ from ..carsharing.user.user_pool import UserPool
 from ..carsharing.utils.zone import Zone
 from ..contrib.user_interaction import IUserInteraction, UserInteractionMock
 
+
 class Server(object):
     def __init__(self, args):
         # configure database
@@ -36,7 +37,8 @@ class Server(object):
         IUserInteraction.get_by_user = lambda user: UserInteractionMock(user.user_info.username,
                                                                         self.database)
 
-    def signup_user_handle(self, user):
+    def signup_user_handle(self, user_info):
+        user = User()
         result = user.sign_up(self.review_queue)
         if result:
             user.user_interaction.receive_message(user_status_to_str(EUserStatus.NOT_APPROVED))

@@ -17,5 +17,5 @@ class IUserInteraction(object):
         raise NotImplementedError("Pure virtual class")
 
     @staticmethod
-    def get_by_user(self, user):
+    def get_by_user(user):
         pass

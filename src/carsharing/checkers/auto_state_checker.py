@@ -1,5 +1,5 @@
 from .checker import Checker
-from src.carsharing.ride.ride_state_machine import ECheckerType
+from .checker_type import ECheckerType
 
 
 class AutoStateChecker(Checker):

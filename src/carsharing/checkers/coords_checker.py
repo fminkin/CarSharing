@@ -1,6 +1,6 @@
 from .checker import Checker
 from ..utils.zone import Zone
-from src.carsharing.ride.ride_state_machine import ECheckerType
+from src.carsharing.checkers.checker_type import ECheckerType
 
 
 class CoordsChecker(Checker):

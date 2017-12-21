@@ -1,4 +1,6 @@
 from enum import Enum
+
+from src.carsharing.checkers.checker_type import ECheckerType
 from .ride import Ride
 from ..checkers.auto_state_checker import AutoStateChecker
 from ..checkers.coords_checker import CoordsChecker
@@ -15,11 +17,6 @@ class ERideState(Enum):
     SUCCESSFULLY_FINISHED = 3,
     TEMPORARY_ISSUE = 4,
     CRITICAL_ISSUE = 5
-
-
-class ECheckerType(Enum):
-    COORDS = 0,
-    STATE = 1
 
 
 class RideStateMachine(object):

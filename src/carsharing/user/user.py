@@ -1,7 +1,7 @@
 from enum import Enum
 
 from ..ride.ride_state_machine import RideStateMachine
-from src.contrib.user_interaction.user_interaction_mock import UserInteractionMock
+from src.contrib.user_interaction import IUserInteraction
 from ..user.user_pool import UserPool
 
 
@@ -18,12 +18,12 @@ def user_status_to_str(user_status):
 
 
 class User(object):
-    def __init__(self):
+    def __init__(self, user_info):
         self.ride_state_machine = None
-        self.user_interaction = UserInteractionMock()
-        self.user_info = None
+        self.user_info = user_info
         self.user_pool = UserPool.instance
         self.balance = 0.0
+        self.user_interaction = IUserInteraction.get_by_user(self)
 
     def sign_up(self, review_queue):
         return review_queue.submit(self)
