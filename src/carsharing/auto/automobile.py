@@ -1,13 +1,13 @@
 from enum import Enum
 
 
-class AutomobileState(Enum):
+class EAutomobileState(Enum):
     OCCUPIED = 0,
     AVAILABLE = 1,
     SUSPENDED = 2
 
 
-class VehicleState(Enum):
+class EVehicleState(Enum):
     ECONOM = 0,
     COMFORT = 1,
     BUSINESS = 2

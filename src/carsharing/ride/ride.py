@@ -1,7 +1,7 @@
 from enum import Enum
 
 
-class ChargeRateType(Enum):
+class EChargeRateType(Enum):
     MINUTELY = 0,
     DAILY = 1,
     CORPORATE = 2

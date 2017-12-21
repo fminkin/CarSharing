@@ -1,5 +1,8 @@
 from enum import Enum
-
+from .ride import Ride
+from ..checkers.auto_state_checker import AutoStateChecker
+from ..checkers.coords_checker import CoordsChecker
+from src.contrib.map_service.map_service_mock import MapServiceMock
 
 class ERideState(Enum):
     UNINITIALIZED = 0,
@@ -17,7 +20,12 @@ class ECheckerType(Enum):
 
 class RideStateMachine(object):
     def __init__(self):
-        pass
+        self.ride = Ride()
+        self.auto_state_checker = AutoStateChecker()
+        self.coords_checker = CoordsChecker()
+        self.ride_state = ERideState()
+        self.map_service = MapServiceMock()
+        self.car_pool = Car
 
     def checker_issue(self, checker_type):
         pass

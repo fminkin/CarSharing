@@ -2,6 +2,7 @@ from ..utils.singleton import Singleton
 from ..utils.coordinate import distance
 from ..auto.automobile import AutomobileState
 
+
 class CarPool(metaclass=Singleton):
     NEARBY_DISTANCE = 5
 
