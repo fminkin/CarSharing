@@ -4,6 +4,7 @@ from ..checkers.auto_state_checker import AutoStateChecker
 from ..checkers.coords_checker import CoordsChecker
 from src.contrib.map_service.map_service_mock import MapServiceMock
 from ..car_pool.car_pool import CarPool
+from src.carsharing.utils.coordinate import TimedCoordinate
 import time
 
 
@@ -43,6 +44,8 @@ class RideStateMachine(object):
         # change it to something meaningful
         if self.issue_start_times[checker_type] is None:
             self.issue_start_times[checker_type] = time.time()
+            coordinates = self.map_service.get_closest_gas_stations(self.ride.coordinates[-1].coordinate)
+            self.user.user_interaction.receive_nearest_gas_stations(coordinates)
         else:
             if time.time() - self.issue_start_times[checker_type] > self.max_issue_time[checker_type]:
                 self.critical_issue()
@@ -79,6 +82,7 @@ class RideStateMachine(object):
 
         self.auto_state_checker = AutoStateChecker(self, self.ride.automobile.car_system)
         self.coords_checker = CoordsChecker(self, self.ride.automobile.car_system)
+        self.ride.automobile.car_system.subscribe_on_coords_change(self)
 
         return result
 
@@ -94,3 +98,6 @@ class RideStateMachine(object):
 
     def finish_ride(self):
         pass
+
+    def on_coordinate_change(self, coordinate):
+        self.ride.add_coordinate(TimedCoordinate(coordinate))
