@@ -28,6 +28,10 @@ class RideStateMachine(object):
     def critical_issue(self):
         pass
 
+    def check_availible_autos(self, coordinates):
+
+        pass
+
     def vehicle_status_change_success(self):
         pass
 

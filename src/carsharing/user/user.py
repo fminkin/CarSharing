@@ -1,5 +1,6 @@
 from enum import Enum
-
+from ..review.review_queue import ReviewQueue
+from ..ride.ride_state_machine import RideStateMachine
 
 class UserStatus(Enum):
     NOT_APPROVED = 0,
@@ -8,13 +9,15 @@ class UserStatus(Enum):
 
 class User(object):
     def __init__(self):
-        pass
+        self.ride_state_machine = None
 
     def sign_up(self):
-        pass
+        ReviewQueue().submit(self)
 
     def check_available_autos(self, coordinates):
-        pass
+        self.ride_state_machine = RideStateMachine()
+        self.ride_state_machine.
+
 
     def reserve_auto(self, automobile, charge_rate):
         pass

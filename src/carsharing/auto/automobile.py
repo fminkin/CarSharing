@@ -15,7 +15,12 @@ class VehicleState(Enum):
 
 class Automobile(object):
     def __init__(self):
-        pass
+        self.mark = None
+        self.capacity = None
+        self.car_system = None
+        self.vehicle_class = None
+        self.auto_state = None
+        self.automobile_coordinate = None
 
     def open_vehicle(self):
         pass
