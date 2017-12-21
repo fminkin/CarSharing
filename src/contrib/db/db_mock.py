@@ -40,16 +40,22 @@ class DataBaseMock(DataBase):
 
     def save_user(self, user):
         self.users[CityHash64(user)] = user
+        self.dump_database()
 
     def save_car(self, car):
         self.cars[CityHash64(car)] = car
+        self.dump_database()
 
     def save_reviewer(self, reviewer):
         self.reviewers[CityHash64(reviewer)] = reviewer
+        self.dump_database()
 
     def dump_database(self):
         with open(self.config["cars"]) as fout:
             pickle.dump(fout, self.cars)
 
         with open(self.config["users"]) as fout:
+            pickle.dump(fout, self.cars)
+
+        with open(self.config["reviewers"]) as fout:
             pickle.dump(fout, self.cars)

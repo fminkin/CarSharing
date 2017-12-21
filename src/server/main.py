@@ -27,7 +27,7 @@ class Server(object):
             user.user_interaction.receive_message(user_status_to_str(EUserStatus.NOT_APPROVED))
             # add user to db
             self.database.save_user(user)
-            self.users.append(user)
+            self.users.append(user)self.users.append(user)
         else:
             user.user_interaction.receive_message(user_status_to_str(EUserStatus.NOT_APPROVED))
 

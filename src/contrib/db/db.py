@@ -21,6 +21,3 @@ class DataBase(object):
 
     def save_reviewer(self, reviewer):
         raise NotImplementedError("Pure virtual class")
-
-    def dump_database(self):
-        raise NotImplementedError("Pure virtual class")

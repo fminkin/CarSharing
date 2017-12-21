@@ -3,6 +3,7 @@ from .ride import Ride
 from ..checkers.auto_state_checker import AutoStateChecker
 from ..checkers.coords_checker import CoordsChecker
 from src.contrib.map_service.map_service_mock import MapServiceMock
+from ..car_pool.car_pool import CarPool
 
 class ERideState(Enum):
     UNINITIALIZED = 0,
@@ -25,7 +26,7 @@ class RideStateMachine(object):
         self.coords_checker = CoordsChecker()
         self.ride_state = ERideState()
         self.map_service = MapServiceMock()
-        self.car_pool = Car
+        self.car_pool = CarPool()
 
     def checker_issue(self, checker_type):
         pass
