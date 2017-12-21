@@ -8,8 +8,13 @@ class EChargeRateType(Enum):
 
 
 class Ride(object):
-    def __init__(self):
-        pass
+    def __init__(self, user, charge_rate, automobile):
+        self.charge_rate = charge_rate
+        self.system_message = None
+        self.photos = None
+        self.user = user
+        self.coordinates = None
+        self.automobile = automobile
 
     def add_coordinate(self, coordinate):
         pass

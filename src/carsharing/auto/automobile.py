@@ -27,3 +27,6 @@ class Automobile(object):
 
     def close_vehicle(self):
         pass
+
+    def book(self):
+        self.auto_state = EAutomobileState.OCCUPIED

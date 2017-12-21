@@ -20,13 +20,14 @@ class ECheckerType(Enum):
 
 
 class RideStateMachine(object):
-    def __init__(self):
-        self.ride = Ride()
+    def __init__(self, user):
+        self.ride = None
         self.auto_state_checker = AutoStateChecker()
         self.coords_checker = CoordsChecker()
         self.ride_state = ERideState()
         self.map_service = MapServiceMock()
         self.car_pool = CarPool()
+        self.user = user
 
     def checker_issue(self, checker_type):
         pass
@@ -38,8 +39,8 @@ class RideStateMachine(object):
         pass
 
     def check_availible_autos(self, coordinates):
-
-        pass
+        automobiles = self.car_pool.get_automobiles_nearby(coordinates)
+        return automobiles
 
     def vehicle_status_change_success(self):
         pass
@@ -48,7 +49,16 @@ class RideStateMachine(object):
         pass
 
     def reserve_auto(self, automobile, charge_rate):
-        pass
+
+        result = self.car_pool.reserve_car(automobile)
+        if not result:
+            return False
+
+        automobile.book()
+        self.ride = Ride(self.user, charge_rate, automobile)
+        # refactor this may be pass args to constructor
+        return True
+
 
     def finish_ride(self):
         pass

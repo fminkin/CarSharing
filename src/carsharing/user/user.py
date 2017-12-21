@@ -20,16 +20,28 @@ class User(object):
     def __init__(self):
         self.ride_state_machine = None
         self.user_interaction = UserInteractionMock()
+        self.user_info = None
 
     def sign_up(self, review_queue):
         return review_queue.submit(self)
 
     def check_available_autos(self, coordinates):
-        self.ride_state_machine = RideStateMachine()
-        self.ride_state_machine.check_availible_autos()
+        self.ride_state_machine = RideStateMachine(self)
+        result = self.ride_state_machine.check_availible_autos(coordinates)
+        if not result:
+            self.user_interaction.receive_message("Fail")
+            # refactor this
+            return
+        self.user_interaction.receive_automobiles(result)
 
     def reserve_auto(self, automobile, charge_rate):
-        pass
+        result = self.ride_state_machine.reserve_auto(automobile, charge_rate)
+        if not result:
+            self.user_interaction.receive_message("Fail")
+            # refactor this
+            return
+        self.user_interaction.receive_message("OK")
+        # refactor this
 
     def finish_ride(self):
         pass
