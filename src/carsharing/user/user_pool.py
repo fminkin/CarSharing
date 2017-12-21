@@ -1,8 +1,21 @@
+class UserPool():
+    instance = None
 
+    @staticmethod
+    def configure():
+        UserPool.instance = UserPool()
 
-class UserPool(object):
     def __init__(self):
-        pass
+        self.users = {}
 
-    def get_supplier(self, coords):
-        pass
+    def push(self, user):
+        self.users[user.user_info.username] = user
+
+    def pop(self, username):
+        del self.users[username]
+
+    def get_supplier(self, timed_coords):
+        for user in self.users.values():
+            if user.user_interaction.want_supply(timed_coords):
+                user.change_balance(5)
+                return user

@@ -1,6 +1,7 @@
 
 
 class DataBase(object):
+
     def __init__(self, config_file):
         pass
 
@@ -17,10 +18,4 @@ class DataBase(object):
         raise NotImplementedError("Pure virtual class")
 
     def save_user(self, user):
-        raise NotImplementedError("Pure virtual class")
-
-    def save_car(self, car):
-        raise NotImplementedError("Pure virtual class")
-
-    def save_reviewer(self, reviewer):
         raise NotImplementedError("Pure virtual class")

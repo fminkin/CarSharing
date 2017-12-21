@@ -15,3 +15,7 @@ class IUserInteraction(object):
 
     def want_supply(self, timed_coordinate):
         raise NotImplementedError("Pure virtual class")
+
+    @staticmethod
+    def get_by_user(self, user):
+        pass

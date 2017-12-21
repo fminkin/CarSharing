@@ -22,14 +22,12 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 @app.route("/signup", methods=["POST", "GET"])
 def signup_page():
     if request.method == "POST":
-        print(request.form['email'])
-        print(request.form['psw'])
+        print(request.form['username'])
+        print(request.form['password'])
         # print(request.files)
         for i in request.files.getlist('file'):
             print(i)
-        user_info = UserInfo(request.form['email'], request.form['psw'], 123)
-
-    # ImmutableMultiDict([('email', 'huy'), ('psw', '123'), ('psw-repeat', '123')])
+        user_info = UserInfo(request.form['username'], request.form['password'], 123)
     return render_template('signup.html')
 
 

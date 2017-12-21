@@ -1,7 +1,7 @@
 
 
 class UserInfo(object):
-    def __init__(self, email, pws, images):
-        self.email = email
-        self.pws = pws
+    def __init__(self, username, password, images):
+        self.username = username
+        self.password = password
         self.images = images

@@ -1,25 +1,40 @@
 import argparse
-from ..contrib.db import DataBaseMock as DB
+import json
+
+from ..contrib.db import DataBaseMock
 from ..carsharing.car_pool import CarPool
-from ..carsharing.auto.automobile import EAutomobileState
+from ..contrib.map_service.map_service import IMapService
+from ..contrib.map_service.map_service_mock import MapServiceMock
 from ..carsharing.review.review_queue import ReviewQueue
 from ..carsharing.user.user import EUserStatus, user_status_to_str
-from cityhash import CityHash64
-
+from ..carsharing.user.user_pool import UserPool
+from ..carsharing.utils.zone import Zone
+from ..contrib.user_interaction import IUserInteraction, UserInteractionMock
 
 class Server(object):
     def __init__(self, args):
-        self.database = DB(args.dbconfig)
-        self.all_cars = self.database.load_cars()
+        # configure database
+        self.database = DataBaseMock(args.dbconfig)
 
-        # load car_pool
-        self.car_pool = CarPool()
-        for car in self.all_cars:
-            if car.auto_state == EAutomobileState.AVAILABLE:
-                self.car_pool.push(car)
+        # configure CarPool
+        CarPool.configure(self.database.load_cars())
 
-        self.reviewers = self.database.load_reviewers()
-        self.review_queue = ReviewQueue(self.review_queue)
+        # configure ReviewQueue
+        self.review_queue = ReviewQueue(self.database.load_reviewers())
+
+        # configure zones
+        with open(args.zones_config) as zones_config_file:
+            parking_coords, ride_coords = json.load(zones_config_file)
+            Zone.configure_zones(parking_coords, ride_coords)
+
+        # configure user_pool
+        UserPool.configure()
+
+        # configure map service
+        IMapService.configure(MapServiceMock())
+
+        IUserInteraction.get_by_user = lambda user: UserInteractionMock(user.user_info.username,
+                                                                        self.database)
 
     def signup_user_handle(self, user):
         result = user.sign_up(self.review_queue)
@@ -50,5 +65,6 @@ class Server(object):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument('--dbconfig', type=str)
+    parser.add_argument('--zones-config', dest='zones_config', type=str)
 
     server = Server(parser.parse_args())

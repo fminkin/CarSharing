@@ -1,6 +1,13 @@
 
 
 class IMapService(object):
+
+    instance = None
+
+    @staticmethod
+    def configure(instance):
+        IMapService.instance = instance
+
     def __init__(self):
         pass
 

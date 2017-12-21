@@ -2,7 +2,7 @@ from enum import Enum
 from .ride import Ride
 from ..checkers.auto_state_checker import AutoStateChecker
 from ..checkers.coords_checker import CoordsChecker
-from src.contrib.map_service.map_service_mock import MapServiceMock
+from src.contrib.map_service.map_service import IMapService
 from ..car_pool.car_pool import CarPool
 from src.carsharing.utils.coordinate import TimedCoordinate
 import time
@@ -27,9 +27,9 @@ class RideStateMachine(object):
         self.ride = None
         self.auto_state_checker = None
         self.coords_checker = None
-        self.ride_state = ERideState()
-        self.map_service = MapServiceMock()
-        self.car_pool = CarPool()
+        self.ride_state = ERideState.UNINITIALIZED
+        self.map_service = IMapService.instance
+        self.car_pool = CarPool.instance
         self.user = user
         self.issue_start_times = {checker_type: None for checker_type in ECheckerType}
         self.max_issue_time = {ECheckerType.COORDS: 60, ECheckerType.STATE: 80}
@@ -86,12 +86,13 @@ class RideStateMachine(object):
 
         return result
 
-    def reserve_auto(self, automobile, charge_rate):
-        result = self.car_pool.reserve_car(automobile)
-        if not result:
-            return False
-
-        automobile.book()
+    def reserve_auto(self, automobile, charge_rate, supply=False):
+        if supply:
+            self.car_pool.reserve_for_supply(automobile, self.user)
+        else:
+            if not self.car_pool.pop(automobile):
+                return False
+            automobile.book()
         self.ride = Ride(self.user, charge_rate, automobile)
         self.ride_state = ERideState.RESERVED
         return True

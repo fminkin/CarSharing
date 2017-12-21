@@ -1,7 +1,8 @@
 from enum import Enum
-from ..review.review_queue import ReviewQueue
+
 from ..ride.ride_state_machine import RideStateMachine
 from src.contrib.user_interaction.user_interaction_mock import UserInteractionMock
+from ..user.user_pool import UserPool
 
 
 class EUserStatus(Enum):
@@ -21,6 +22,7 @@ class User(object):
         self.ride_state_machine = None
         self.user_interaction = UserInteractionMock()
         self.user_info = None
+        self.user_pool = UserPool.instance
         self.balance = 0.0
 
     def sign_up(self, review_queue):
@@ -46,9 +48,18 @@ class User(object):
 
     def finish_ride(self):
         self.ride_state_machine.finish_ride()
+        self.ride_state_machine = None
 
-    def request_supply(self):
-        pass
+    def request_supply(self, coords, charge_rate):
+        supplier = self.user_pool.get_supplier(coords)
+        if supplier is None:
+            self.user_interaction.receive_message("Sorry no suppliers")
+            return
+        supplier.change_balance(5)
+        self.change_balance(-5)
+        automobile = supplier.ride_state_machine.ride.automobile
+        self.ride_state_machine = RideStateMachine(self)
+        self.ride_state_machine.reserve_auto(automobile, charge_rate, supply=True)
 
     def start_ride(self, photos):
         result = self.ride_state_machine.start_ride(photos)
