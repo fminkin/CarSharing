@@ -1,6 +1,6 @@
 from ..utils.singleton import Singleton
 from ..utils.coordinate import distance
-from ..auto.automobile import AutomobileState
+from ..auto.automobile import EAutomobileState
 
 
 class CarPool(metaclass=Singleton):
@@ -10,17 +10,18 @@ class CarPool(metaclass=Singleton):
         self.automobiles = {}
 
     def push(self, automobile):
-        self.automobiles[automobile.id] = automobile
+        automobile.auto_state = EAutomobileState.AVAILABLE
+        self.automobiles[automobile.license_plate] = automobile
 
-    def pop(self, automobile_id):
-        del self.automobiles[automobile_id]
+    def pop(self, automobile_plate):
+        del self.automobiles[automobile_plate]
 
-    def reserve_car(self, automobile_id):
-        self.automobiles[automobile_id].auto_sate = AutomobileState.OCCUPIED
+    def reserve_car(self, automobile_plate):
+        self.automobiles[automobile_plate].auto_sate = EAutomobileState.OCCUPIED
 
     def get_automobiles_nearby(self, coordinate):
         result = []
-        for id, auto in self.automobiles.items():
-            if distance(auto.automobile_coordinate, coordinate) < self.NEARBY_DISTANCE:
+        for _, auto in self.automobiles.items():
+            if distance(auto.automobile_coordinate, coordinate) <= self.NEARBY_DISTANCE:
                 result.append(auto)
         return result

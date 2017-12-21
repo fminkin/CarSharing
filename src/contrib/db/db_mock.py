@@ -32,8 +32,8 @@ class DataBaseMock(DataBase):
     def load_users(self):
         return self.users
 
-    def load_user(self, user_info):
-        return self.users[CityHash64(user_info)]
+    def load_user(self, username):
+        return self.users[username]
 
     def load_cars(self):
         return list(self.cars.values())
@@ -42,11 +42,11 @@ class DataBaseMock(DataBase):
         return list(self.reviewers.values())
 
     def save_user(self, user):
-        self.users[CityHash64(user.user_info)] = user
+        self.users[user.user_info.username] = user
         self.dump_database()
 
     def save_car(self, car):
-        self.cars[CityHash64(car)] = car
+        self.cars[car.licence_plate] = car
         self.dump_database()
 
     def save_reviewer(self, reviewer):

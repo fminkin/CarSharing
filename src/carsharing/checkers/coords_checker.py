@@ -19,6 +19,9 @@ class CoordsChecker(Checker):
         else:
             self.ride_state_machine.checker_issue(ECheckerType.COORDS)
 
-    def check_parking_zones(self):
-        pass
+    def check_parking_zones(self, coordinate):
+        if not any([zone.contains(coordinate) for zone in self.parking_zones]):
+            return self.parking_zones
+        return None
+
 

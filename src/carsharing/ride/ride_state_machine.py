@@ -97,7 +97,19 @@ class RideStateMachine(object):
         return True
 
     def finish_ride(self):
-        pass
+        result = self.coords_checker.check_parking_zones(self.ride.coordinates[-1].coordinate)
+        if result:
+            self.user.user_interaction.receive_parking_zones(result)
+            return
+        closed = self.ride.automobile.close_vehicle()
+        if not closed:
+            self.ride_state = ERideState.CRITICAL_ISSUE
+            self.user.user_interaction.receive_message("Fail")
+            # may be refactor?
+            return False
+        self.ride.charge_user()
+        self.car_pool.push(self.ride.automobile)
+
 
     def on_coordinate_change(self, coordinate):
         self.ride.add_coordinate(TimedCoordinate(coordinate))

@@ -17,10 +17,13 @@ class Ride(object):
         self.automobile = automobile
 
     def add_coordinate(self, coordinate):
-        pass
+        self.coordinates.append(coordinate)
 
     def add_photos(self, photos):
         self.photos = photos
 
+    def _calculate_charge_value(self):
+        return len(self.coordinates) * (self.charge_rate.value + 1)
+
     def charge_user(self):
-        pass
+        self.user.change_balance(-self._calculate_charge_value())

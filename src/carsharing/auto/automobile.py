@@ -17,6 +17,7 @@ class Automobile(object):
     def __init__(self):
         self.mark = None
         self.capacity = None
+        self.license_plate = None
         self.car_system = CarSystemMock()
         self.vehicle_class = None
         self.auto_state = None
@@ -31,7 +32,12 @@ class Automobile(object):
         return result
 
     def close_vehicle(self):
-        pass
+        result = self.car_system.check_systems()
+        if not result:
+            self.auto_state = EAutomobileState.SUSPENDED
+            return result
+        self.car_system.close_auto()
+        return result
 
     def book(self):
         self.auto_state = EAutomobileState.OCCUPIED

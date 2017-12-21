@@ -30,18 +30,21 @@ class Server(object):
         else:
             user.user_interaction.receive_message(user_status_to_str(EUserStatus.NOT_APPROVED))
 
-    def book_ride_action_handle(self, user_info, coordinates):
-        user = self.database.load_user(user_info)
+    def book_ride_action_handle(self, username, coordinates):
+        user = self.database.load_user(username)
         user.check_available_autos(coordinates)
 
-    def reserve_auto_handle(self, user_info, automobile, charge_rate):
-        user = self.database.load_user(user_info)
+    def reserve_auto_handle(self, username, automobile, charge_rate):
+        user = self.database.load_user(username)
         user.reserve_auto(automobile, charge_rate)
 
-    def start_ride_action_handle(self, user_info, photos):
-        user = self.database.load_user(user_info)
+    def start_ride_action_handle(self, username, photos):
+        user = self.database.load_user(username)
         user.start_ride(photos)
 
+    def finish_ride_action_handle(self, username):
+        user = self.database.load_user(username)
+        user.finish_ride()
 
 
 if __name__ == "__main__":

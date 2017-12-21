@@ -21,6 +21,7 @@ class User(object):
         self.ride_state_machine = None
         self.user_interaction = UserInteractionMock()
         self.user_info = None
+        self.balance = 0.0
 
     def sign_up(self, review_queue):
         return review_queue.submit(self)
@@ -44,7 +45,7 @@ class User(object):
         # refactor this
 
     def finish_ride(self):
-        pass
+        self.ride_state_machine.finish_ride()
 
     def request_supply(self):
         pass
@@ -58,4 +59,4 @@ class User(object):
         self.user_interaction.receive_message("OK")
 
     def change_balance(self, delta):
-        pass
+        self.balance += delta

@@ -13,7 +13,7 @@ class DataBase(object):
     def load_reviewers(self):
         raise NotImplementedError("Pure virtual class")
 
-    def load_user(self, user_info):
+    def load_user(self, username):
         raise NotImplementedError("Pure virtual class")
 
     def save_user(self, user):

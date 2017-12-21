@@ -12,6 +12,9 @@ class UserInteractionMock(IUserInteraction):
     def receive_nearest_gas_stations(self, gas_stations_coordinates):
         pass
 
+    def receive_parking_zones(self, parking_zones):
+        pass
+
     def receive_automobiles(self, automobiles):
         pass
 
