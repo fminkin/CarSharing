@@ -4,6 +4,7 @@ from ..checkers.auto_state_checker import AutoStateChecker
 from ..checkers.coords_checker import CoordsChecker
 from src.contrib.map_service.map_service_mock import MapServiceMock
 from ..car_pool.car_pool import CarPool
+import time
 
 
 class ERideState(Enum):
@@ -23,37 +24,62 @@ class ECheckerType(Enum):
 class RideStateMachine(object):
     def __init__(self, user):
         self.ride = None
-        self.auto_state_checker = AutoStateChecker()
-        self.coords_checker = CoordsChecker()
+        self.auto_state_checker = None
+        self.coords_checker = None
         self.ride_state = ERideState()
         self.map_service = MapServiceMock()
         self.car_pool = CarPool()
         self.user = user
+        self.issue_start_times = {checker_type: None for checker_type in ECheckerType}
+        self.max_issue_time = {ECheckerType.COORDS: 60, ECheckerType.STATE: 80}
+        # may be parse it from config?
 
     def checker_issue(self, checker_type):
-        pass
+        if self.ride_state == ERideState.CRITICAL_ISSUE:
+            return
+        self.ride_state = ERideState.TEMPORARY_ISSUE
+
+        self.user.user_interaction.receive_message("Temporary Issue")
+        # change it to something meaningful
+        if self.issue_start_times[checker_type] is None:
+            self.issue_start_times[checker_type] = time.time()
+        else:
+            if time.time() - self.issue_start_times[checker_type] > self.max_issue_time[checker_type]:
+                self.critical_issue()
 
     def no_issue(self, checker_type):
-        pass
+        if self.ride_state == ERideState.CRITICAL_ISSUE:
+            return
+
+        self.issue_start_times[checker_type] = None
+        if not any(self.issue_start_times.values()):
+            self.ride_state = ERideState.IN_PROGRESS
 
     def critical_issue(self):
-        pass
+        self.ride_state = ERideState.CRITICAL_ISSUE
+        self.user.user_interaction.receive_message("Critical Issue")
+        # change it to something meaningful
 
     def check_availible_autos(self, coordinates):
         automobiles = self.car_pool.get_automobiles_nearby(coordinates)
         return automobiles
 
     def vehicle_status_change_success(self):
-        self.ride_state = ERideState.IN_PROGRESS
+        self.ride_state = ERideState.SUCCESSFULLY_FINISHED
 
     def start_ride(self, photos):
         assert (self.ride)
         self.ride.add_photos(photos)
         result = self.ride.automobile.open_vehicle()
         if result:
-            self.vehicle_status_change_success()
+            self.ride_state = ERideState.IN_PROGRESS
         else:
             self.ride_state = ERideState.CRITICAL_ISSUE
+            return result
+
+        self.auto_state_checker = AutoStateChecker(self, self.ride.automobile.car_system)
+        self.coords_checker = CoordsChecker(self, self.ride.automobile.car_system)
+
         return result
 
     def reserve_auto(self, automobile, charge_rate):
@@ -65,7 +91,6 @@ class RideStateMachine(object):
         self.ride = Ride(self.user, charge_rate, automobile)
         self.ride_state = ERideState.RESERVED
         return True
-
 
     def finish_ride(self):
         pass
