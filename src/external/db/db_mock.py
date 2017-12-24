@@ -1,6 +1,9 @@
 from .db import IDatabase
 import json
 from src.carsharing.user.user import User
+from src.carsharing.auto.automobile import Automobile
+from src.carsharing.review.reviewer import Reviewer
+
 import os
 import pickle
 
@@ -14,46 +17,63 @@ class DataBaseMock(IDatabase):
 
         if os.path.exists(self.config["cars"]):
             with open(self.config["cars"], 'rb') as fin:
-                self.cars = pickle.load(fin)
+                self.cars = [Automobile.deserialize(auto) for auto in pickle.load(fin)]
         else:
-            self.cars = {}
+            self.cars = []
+        print(self.cars)
 
         if os.path.exists(self.config["users"]):
             with open(self.config["users"], 'rb') as fin:
-                self.users = pickle.load(fin)
+                self.users = [User.deserialize(user) for user in pickle.load(fin)]
         else:
-            self.users = {}
+            self.users = []
         print(self.users)
+        for user in self.users:
+            print(user.user_info.username, user.user_interaction)
 
         if os.path.exists(self.config["reviewers"]):
             with open(self.config["reviewers"], 'rb') as fin:
-                self.reviewers = pickle.load(fin)
-            print(self.reviewers)
+                self.reviewers = [Reviewer.deserialize(reviewer) for reviewer in pickle.load(fin)]
         else:
-            self.reviewers = {}
+            self.reviewers = []
+        print(self.reviewers)
 
     def load_users(self):
-        return User(self.users)
+        return self.users
 
     def load_user(self, username):
-        return self.users[username]
+        for user in self.users:
+            if user.user_info.username == username:
+                return user
+        return None
 
     def load_cars(self):
-        return list(self.cars.values())
+        return self.cars
+
+    def load_car(self, license_plate):
+        for car in self.cars:
+            if car.license_plate == license_plate:
+                return car
+        return None
 
     def load_reviewers(self):
-        return list(self.reviewers.values())
+        return self.reviewers
 
     def save_user(self, user):
-        self.users[user.user_info.username] = user.user_info
+        for i in range(len(self.users)):
+            if self.users[i].user_info.username == user.user_info.username:
+                self.users[i] = user
+                break
+        else:
+            self.users.append(user)
         self.dump_database()
 
     def dump_database(self):
         with open(self.config["cars"], 'wb+') as fout:
-            pickle.dump(self.cars, fout)
+            pickle.dump([car.serialize() for car in self.cars], fout)
 
         with open(self.config["users"], 'wb+') as fout:
-            pickle.dump(self.users, fout)
+            pickle.dump([user.serialize() for user in self.users], fout)
 
         with open(self.config["reviewers"], 'wb+') as fout:
-            pickle.dump(self.reviewers, fout)
+            pickle.dump([reviewer.serialize() for reviewer in self.reviewers], fout)

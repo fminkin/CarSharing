@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+Your coordinates:
+
+<form action="{{url_for('check_availible_autos')}}" method="POST" enctype="multipart/form-data">
+    <input type="text" name="x" />
+    <input type="text" name="y" />
+    <input type="submit"/>
+</form>
+
+</body>
+</html>

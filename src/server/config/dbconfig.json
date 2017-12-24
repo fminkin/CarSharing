@@ -1,0 +1,5 @@
+{
+  "cars": "../external/db/files/cars",
+  "users": "../external/db/files/users",
+  "reviewers": "../external/db/files/reviewers"
+}

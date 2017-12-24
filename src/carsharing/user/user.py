@@ -3,6 +3,7 @@ from enum import Enum
 from ..ride.ride_state_machine import RideStateMachine
 from src.external.user_interaction import IUserInteraction
 from ..user.user_pool import UserPool
+from ..utils.serializable import Serializable
 
 
 class EUserStatus(Enum):
@@ -17,13 +18,21 @@ def user_status_to_str(user_status):
         return "Congratulations, You have been approved!"
 
 
-class User(object):
+class User(Serializable):
     def __init__(self, user_info):
         self.ride_state_machine = None
         self.user_info = user_info
         self.user_pool = UserPool.instance
         self.balance = 0.0
         self.user_interaction = IUserInteraction.get_by_user(self)
+        print(self.user_interaction)
+
+    def serialize(self):
+        return self.user_info
+
+    @staticmethod
+    def deserialize(serialization):
+        return User(serialization)
 
     def sign_up(self, review_queue):
         return review_queue.submit(self)
@@ -33,11 +42,13 @@ class User(object):
         result = self.ride_state_machine.check_availible_autos(coordinates)
         if not result:
             self.user_interaction.receive_message("Fail")
-            # refactor this
             return
-        self.user_interaction.receive_automobiles(result)
+        self.user_interaction.receive_automobiles([auto.serialize() for auto in result])
 
     def reserve_auto(self, automobile, charge_rate):
+        if not self.ride_state_machine:
+            self.user_interaction.receive_message("Fail: need to book ride (aka check availible autos first")
+            return
         result = self.ride_state_machine.reserve_auto(automobile, charge_rate)
         if not result:
             self.user_interaction.receive_message("Fail")

@@ -14,13 +14,13 @@ from .configurator import Configurator
 
 class Server(object):
     def __init__(self, args):
+        self.message_storage = defaultdict(list)
+        IUserInteraction.get_by_user = lambda user: UserInteractionMock(self.message_storage[user.user_info.username])
+
         # configure database
         self.database = DataBaseMock(args.dbconfig)
         Configurator.configure(self.database, args)
         self.review_queue = ReviewQueue.instance
-
-        self.message_storage = defaultdict(list)
-        IUserInteraction.get_by_user = lambda user: UserInteractionMock(self.message_storage[user.user_info.username])
 
         # configure map service
         IMapService.configure(MapServiceMock())
@@ -37,18 +37,22 @@ class Server(object):
             user.user_interaction.receive_message(user_status_to_str(EUserStatus.NOT_APPROVED))
 
     def check_account_handle(self, account):
-        return account.username in self.database.users and self.database.users[account.username].password == account.password
+        user = self.database.load_user(account.username)
+        return user and user.user_info.password == account.password
 
     def get_messages_handle(self, username):
         if username in self.message_storage:
             return self.message_storage[username]
+        return []
 
     def check_availible_autos_handle(self, username, coordinates):
         user = self.database.load_user(username)
         user.check_available_autos(coordinates)
 
-    def reserve_auto_handle(self, username, automobile, charge_rate):
+    def reserve_auto_handle(self, username, license_plate, charge_rate):
         user = self.database.load_user(username)
+        print(user)
+        automobile = self.database.load_car(license_plate)
         user.reserve_auto(automobile, charge_rate)
 
     def start_ride_action_handle(self, username, photos):

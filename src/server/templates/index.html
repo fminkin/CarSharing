@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Peretachka</title>
+</head>
+<body>
+{%if session.username%}
+<a href="/messages">check messages</a> <br>
+<a href="/log_out">log out</a> <br>
+<a href="/check_autos">check_availible_autos</a> <br>
+<a href="/reserve_auto">reserve_auto</a> <br>
+<a href="/start_ride">start_ride_action</a> <br>
+<a href="/finish_ride">finish_ride_action</a> <br>
+{%else%}
+<a href="/login">log in</a> <br>
+<a href="/signup">sign up</a>
+{%endif%}
+</body>
+</html>

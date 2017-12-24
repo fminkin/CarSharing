@@ -18,3 +18,6 @@ class ICarSystem(object):
 
     def subscribe_on_auto_state_change(self, subscriber):
         raise NotImplementedError("Pure virtual class")
+
+    def get_coordinate(self):
+        raise NotImplementedError()

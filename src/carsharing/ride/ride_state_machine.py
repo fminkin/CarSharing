@@ -61,6 +61,7 @@ class RideStateMachine(object):
         # change it to something meaningful
 
     def check_availible_autos(self, coordinates):
+        self.coord = TimedCoordinate(coordinates)
         automobiles = self.car_pool.get_automobiles_nearby(coordinates)
         return automobiles
 
@@ -80,14 +81,15 @@ class RideStateMachine(object):
         self.auto_state_checker = AutoStateChecker(self, self.ride.automobile.car_system)
         self.coords_checker = CoordsChecker(self, self.ride.automobile.car_system)
         self.ride.automobile.car_system.subscribe_on_coords_change(self)
+        self.ride.coordinates.append(self.coord)
 
         return result
 
     def reserve_auto(self, automobile, charge_rate, supply=False):
         if supply:
-            self.car_pool.reserve_for_supply(automobile, self.user)
+            self.car_pool.reserve_for_supply(automobile.license_plate, self.user)
         else:
-            if not self.car_pool.pop(automobile):
+            if not self.car_pool.pop(automobile.license_plate):
                 return False
             automobile.book()
         self.ride = Ride(self.user, charge_rate, automobile)

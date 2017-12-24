@@ -11,6 +11,9 @@ class IDatabase(object):
     def load_cars(self):
         raise NotImplementedError("Pure virtual class")
 
+    def load_car(self, license_plate):
+        raise NotImplementedError("Pure virtual class")
+
     def load_reviewers(self):
         raise NotImplementedError("Pure virtual class")
 

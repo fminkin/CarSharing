@@ -1,5 +1,7 @@
 from enum import Enum
 from src.external.car_system.car_system_mock import CarSystemMock
+from ..utils.serializable import Serializable
+
 
 class EAutomobileState(Enum):
     OCCUPIED = 0,
@@ -7,22 +9,27 @@ class EAutomobileState(Enum):
     SUSPENDED = 2
 
 
-class EVehicleState(Enum):
+class EVehicleClass(Enum):
     ECONOM = 0,
     COMFORT = 1,
     BUSINESS = 2
 
 
-class Automobile(object):
-    def __init__(self):
-        self.mark = None
-        self.capacity = None
-        self.license_plate = None
-        self.license_plate = None
+class Automobile(Serializable):
+    def __init__(self, mark, capacity, license_plate, vehicle_class):
+        self.mark = mark
+        self.capacity = capacity
+        self.license_plate = license_plate
         self.car_system = CarSystemMock()
-        self.vehicle_class = None
-        self.auto_state = None
-        self.automobile_coordinate = None
+        self.vehicle_class = vehicle_class
+        self.auto_state = EAutomobileState.AVAILABLE
+
+    def serialize(self):
+        return [self.mark, self.capacity, self.license_plate, self.vehicle_class]
+
+    @staticmethod
+    def deserialize(serialization):
+        return Automobile(*serialization)
 
     def open_vehicle(self):
         result = self.car_system.check_systems()

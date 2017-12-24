@@ -1,4 +1,5 @@
 from .car_system import ICarSystem
+from src.carsharing.utils.coordinate import Coordinate
 
 
 class CarSystemMock(ICarSystem):
@@ -20,3 +21,6 @@ class CarSystemMock(ICarSystem):
 
     def subscribe_on_auto_state_change(self, subscriber):
         pass
+
+    def get_coordinate(self):
+        return Coordinate(1, 2)

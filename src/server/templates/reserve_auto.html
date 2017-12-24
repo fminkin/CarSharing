@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+Insert auto license plate and charge rate (MINUTELY = 0, DAILY = 1, CORPORATE = 2) <br>
+
+<form action="{{url_for('reserve_auto')}}" method="POST" enctype="multipart/form-data">
+    <input type="text" name="plate" />
+    <input type="text" name="charge_rate" />
+    <input type="submit"/>
+</form>
+</body>
+</html>

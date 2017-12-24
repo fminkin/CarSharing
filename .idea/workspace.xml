@@ -2,44 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8971e384-6f0e-40ed-a61f-7f2d2417ccf8" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/CarSharing.iml" afterPath="$PROJECT_DIR$/.idea/CarSharing.iml" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/carsharing/utils/serializable.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/server/templates/check_autos_form.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/server/templates/check_messages.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/server/templates/finish_ride.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/server/templates/reserve_auto.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/server/templates/start_ride.html" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/src/carsharing/auto/automobile.py" afterPath="$PROJECT_DIR$/src/carsharing/auto/automobile.py" />
-      <change beforePath="$PROJECT_DIR$/src/carsharing/checkers/auto_state_checker.py" afterPath="$PROJECT_DIR$/src/carsharing/checkers/auto_state_checker.py" />
-      <change beforePath="$PROJECT_DIR$/src/carsharing/checkers/checker.py" afterPath="$PROJECT_DIR$/src/carsharing/checkers/checker.py" />
-      <change beforePath="$PROJECT_DIR$/src/carsharing/checkers/coords_checker.py" afterPath="$PROJECT_DIR$/src/carsharing/checkers/coords_checker.py" />
-      <change beforePath="$PROJECT_DIR$/src/carsharing/review/review_queue.py" afterPath="$PROJECT_DIR$/src/carsharing/review/review_queue.py" />
+      <change beforePath="$PROJECT_DIR$/src/carsharing/car_pool/car_pool.py" afterPath="$PROJECT_DIR$/src/carsharing/car_pool/car_pool.py" />
       <change beforePath="$PROJECT_DIR$/src/carsharing/review/reviewer.py" afterPath="$PROJECT_DIR$/src/carsharing/review/reviewer.py" />
+      <change beforePath="$PROJECT_DIR$/src/carsharing/ride/ride.py" afterPath="$PROJECT_DIR$/src/carsharing/ride/ride.py" />
       <change beforePath="$PROJECT_DIR$/src/carsharing/ride/ride_state_machine.py" afterPath="$PROJECT_DIR$/src/carsharing/ride/ride_state_machine.py" />
       <change beforePath="$PROJECT_DIR$/src/carsharing/user/user.py" afterPath="$PROJECT_DIR$/src/carsharing/user/user.py" />
-      <change beforePath="$PROJECT_DIR$/src/carsharing/user/user_info.py" afterPath="$PROJECT_DIR$/src/carsharing/user/user_info.py" />
-      <change beforePath="$PROJECT_DIR$/src/carsharing/utils/singleton.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/client/__init__.py" afterPath="$PROJECT_DIR$/src/external/__init__.py" />
-      <change beforePath="$PROJECT_DIR$/src/client/config.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/client/dbconfig.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/client/main.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/client/templates/actions.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/client/templates/index.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/client/templates/login.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/client/templates/messages.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/client/templates/signup.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/client/utils.py" afterPath="$PROJECT_DIR$/src/server/configurator.py" />
-      <change beforePath="$PROJECT_DIR$/src/client/zones-config.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/contrib/__init__.py" afterPath="$PROJECT_DIR$/src/external/car_system/__init__.py" />
-      <change beforePath="$PROJECT_DIR$/src/contrib/car_system/__init__.py" afterPath="$PROJECT_DIR$/src/external/map_service/__init__.py" />
-      <change beforePath="$PROJECT_DIR$/src/contrib/car_system/car_system.py" afterPath="$PROJECT_DIR$/src/external/car_system/car_system.py" />
-      <change beforePath="$PROJECT_DIR$/src/contrib/car_system/car_system_mock.py" afterPath="$PROJECT_DIR$/src/external/car_system/car_system_mock.py" />
-      <change beforePath="$PROJECT_DIR$/src/contrib/db/__init__.py" afterPath="$PROJECT_DIR$/src/external/db/__init__.py" />
-      <change beforePath="$PROJECT_DIR$/src/contrib/db/db.py" afterPath="$PROJECT_DIR$/src/external/db/db.py" />
-      <change beforePath="$PROJECT_DIR$/src/contrib/db/db_mock.py" afterPath="$PROJECT_DIR$/src/external/db/db_mock.py" />
-      <change beforePath="$PROJECT_DIR$/src/contrib/map_service/__init__.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/contrib/map_service/map_service.py" afterPath="$PROJECT_DIR$/src/external/map_service/map_service.py" />
-      <change beforePath="$PROJECT_DIR$/src/contrib/map_service/map_service_mock.py" afterPath="$PROJECT_DIR$/src/external/map_service/map_service_mock.py" />
-      <change beforePath="$PROJECT_DIR$/src/contrib/user_interaction/__init__.py" afterPath="$PROJECT_DIR$/src/external/user_interaction/__init__.py" />
-      <change beforePath="$PROJECT_DIR$/src/contrib/user_interaction/user_interaction.py" afterPath="$PROJECT_DIR$/src/external/user_interaction/user_interaction.py" />
-      <change beforePath="$PROJECT_DIR$/src/contrib/user_interaction/user_interaction_mock.py" afterPath="$PROJECT_DIR$/src/external/user_interaction/user_interaction_mock.py" />
-      <change beforePath="$PROJECT_DIR$/src/server/main.py" afterPath="$PROJECT_DIR$/src/server/server.py" />
+      <change beforePath="$PROJECT_DIR$/src/carsharing/utils/zone.py" afterPath="$PROJECT_DIR$/src/carsharing/utils/zone.py" />
+      <change beforePath="$PROJECT_DIR$/src/external/car_system/car_system.py" afterPath="$PROJECT_DIR$/src/external/car_system/car_system.py" />
+      <change beforePath="$PROJECT_DIR$/src/external/car_system/car_system_mock.py" afterPath="$PROJECT_DIR$/src/external/car_system/car_system_mock.py" />
+      <change beforePath="$PROJECT_DIR$/src/external/db/db.py" afterPath="$PROJECT_DIR$/src/external/db/db.py" />
+      <change beforePath="$PROJECT_DIR$/src/external/db/db_mock.py" afterPath="$PROJECT_DIR$/src/external/db/db_mock.py" />
+      <change beforePath="$PROJECT_DIR$/src/external/user_interaction/user_interaction_mock.py" afterPath="$PROJECT_DIR$/src/external/user_interaction/user_interaction_mock.py" />
+      <change beforePath="$PROJECT_DIR$/src/server/main.py" afterPath="$PROJECT_DIR$/src/server/main.py" />
+      <change beforePath="$PROJECT_DIR$/src/server/server.py" afterPath="$PROJECT_DIR$/src/server/server.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -50,67 +33,15 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/CarSharing$main.coverage" NAME="main Coverage Results" MODIFIED="1514089858630" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/client" />
-    <SUITE FILE_PATH="coverage/CarSharing$flask.coverage" NAME="flask Coverage Results" MODIFIED="1514102117984" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/server" />
+    <SUITE FILE_PATH="coverage/CarSharing$flask.coverage" NAME="flask Coverage Results" MODIFIED="1514119847012" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/server" />
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="user.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/carsharing/user/user.py">
+      <file leaf-file-name="ride_state_machine.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/carsharing/ride/ride_state_machine.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="224">
-              <caret line="22" column="27" lean-forward="false" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="27" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="user_pool.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/carsharing/user/user_pool.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="20" column="27" lean-forward="false" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="27" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="user_info.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/carsharing/user/user_info.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/server/main.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="14" column="86" lean-forward="true" selection-start-line="14" selection-start-column="86" selection-end-line="14" selection-end-column="86" />
-              <folding>
-                <element signature="e#0#87#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="account.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/carsharing/user/account.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="8" lean-forward="false" selection-start-line="1" selection-start-column="8" selection-end-line="1" selection-end-column="8" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="datastructures.py" pinned="false" current-in-tab="false">
-        <entry file="file:///usr/local/lib/python3.5/dist-packages/werkzeug/datastructures.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="173">
-              <caret line="2721" column="32" lean-forward="true" selection-start-line="2721" selection-start-column="32" selection-end-line="2721" selection-end-column="32" />
+            <state relative-caret-position="357">
+              <caret line="63" column="34" lean-forward="false" selection-start-line="63" selection-start-column="34" selection-end-line="63" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -119,8 +50,8 @@
       <file leaf-file-name="db_mock.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/external/db/db_mock.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="37" column="34" lean-forward="false" selection-start-line="37" selection-start-column="34" selection-end-line="37" selection-end-column="34" />
+            <state relative-caret-position="-433">
+              <caret line="26" column="41" lean-forward="false" selection-start-line="26" selection-start-column="41" selection-end-line="26" selection-end-column="41" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
               </folding>
@@ -128,31 +59,83 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="users" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/external/db/files/users">
+      <file leaf-file-name="coords_checker.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/carsharing/checkers/coords_checker.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="2" column="84" lean-forward="true" selection-start-line="2" selection-start-column="84" selection-end-line="2" selection-end-column="84" />
+            <state relative-caret-position="102">
+              <caret line="8" column="36" lean-forward="true" selection-start-line="8" selection-start-column="36" selection-end-line="8" selection-end-column="36" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="db.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/external/db/db.py">
+      <file leaf-file-name="coordinate.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/carsharing/utils/coordinate.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+            <state relative-caret-position="170">
+              <caret line="10" column="8" lean-forward="false" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="server.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="zone.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/carsharing/utils/zone.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="10" column="38" lean-forward="true" selection-start-line="10" selection-start-column="38" selection-end-line="10" selection-end-column="38" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ride.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/carsharing/ride/ride.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="451">
+              <caret line="37" column="65" lean-forward="true" selection-start-line="37" selection-start-column="65" selection-end-line="37" selection-end-column="65" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/server/main.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="247">
+              <caret line="114" column="47" lean-forward="false" selection-start-line="114" selection-start-column="47" selection-end-line="114" selection-end-column="47" />
+              <folding>
+                <element signature="e#0#87#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="start_ride.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/server/templates/start_ride.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="12" column="7" lean-forward="true" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="messages.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/server/templates/messages.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" column="6" lean-forward="true" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="server.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/server/server.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="366">
-              <caret line="54" column="48" lean-forward="true" selection-start-line="54" selection-start-column="48" selection-end-line="54" selection-end-column="48" />
+            <state relative-caret-position="170">
+              <caret line="34" column="41" lean-forward="true" selection-start-line="34" selection-start-column="41" selection-end-line="34" selection-end-column="41" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -165,8 +148,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -175,6 +158,14 @@
       <find>AutoS</find>
       <find>messa</find>
       <find>review</find>
+      <find>config</find>
+      <find>get</find>
+      <find>sign</find>
+      <find>if reque</find>
+      <find>messages</find>
+      <find>check_a</find>
+      <find>chec</find>
+      <find>reserve</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -184,18 +175,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/user/user_info.py" />
-        <option value="$PROJECT_DIR$/src/utils/singleton.py" />
-        <option value="$PROJECT_DIR$/src/review/review_queue.py" />
-        <option value="$PROJECT_DIR$/src/user/user.py" />
         <option value="$PROJECT_DIR$/src/ride/ride_state_machine.py" />
         <option value="$PROJECT_DIR$/src/car_pool/car_pool.py" />
         <option value="$PROJECT_DIR$/src/carsharing/utils/coordinate.py" />
         <option value="$PROJECT_DIR$/src/contrib/db/db_mock.py" />
-        <option value="$PROJECT_DIR$/src/carsharing/utils/zone.py" />
         <option value="$PROJECT_DIR$/src/contrib/map_service/map_service.py" />
         <option value="$PROJECT_DIR$/src/carsharing/user/user_pool.py" />
-        <option value="$PROJECT_DIR$/src/carsharing/car_pool/car_pool.py" />
         <option value="$PROJECT_DIR$/src/contrib/user_interaction/__init__.py" />
         <option value="$PROJECT_DIR$/src/contrib/db/db.py" />
         <option value="$PROJECT_DIR$/src/contrib/user_interaction/user_interaction_mock.py" />
@@ -203,30 +188,44 @@
         <option value="$PROJECT_DIR$/src/client/templates/user_page.html" />
         <option value="$PROJECT_DIR$/src/client/templates/messages_page.html" />
         <option value="$PROJECT_DIR$/src/client/templates/actions.html" />
-        <option value="$PROJECT_DIR$/src/carsharing/user/user.py" />
         <option value="$PROJECT_DIR$/src/contrib/user_interaction/user_interaction.py" />
-        <option value="$PROJECT_DIR$/src/carsharing/ride/ride_state_machine.py" />
         <option value="$PROJECT_DIR$/src/client/config.json" />
         <option value="$PROJECT_DIR$/src/carsharing/__init__.py" />
         <option value="$PROJECT_DIR$/__init__.py" />
         <option value="$PROJECT_DIR$/src/__init__.py" />
         <option value="$PROJECT_DIR$/src/client/templates/signup.html" />
         <option value="$PROJECT_DIR$/src/client/main.py" />
-        <option value="$PROJECT_DIR$/src/carsharing/auto/automobile.py" />
         <option value="$PROJECT_DIR$/src/carsharing/checkers/coords_checker.py" />
         <option value="$PROJECT_DIR$/src/carsharing/checkers/auto_state_checker.py" />
         <option value="$PROJECT_DIR$/src/carsharing/checkers/checker.py" />
-        <option value="$PROJECT_DIR$/src/external/db/db.py" />
         <option value="$PROJECT_DIR$/src/server/flask.py" />
-        <option value="$PROJECT_DIR$/src/external/user_interaction/user_interaction_mock.py" />
         <option value="$PROJECT_DIR$/src/server/configurator.py" />
-        <option value="$PROJECT_DIR$/src/carsharing/review/reviewer.py" />
         <option value="$PROJECT_DIR$/src/server/config/dbconfig.json" />
         <option value="$PROJECT_DIR$/src/carsharing/review/review_queue.py" />
-        <option value="$PROJECT_DIR$/src/server/server.py" />
         <option value="$PROJECT_DIR$/src/carsharing/user/user_info.py" />
-        <option value="$PROJECT_DIR$/src/server/main.py" />
+        <option value="$PROJECT_DIR$/src/carsharing/user/serializable.py" />
+        <option value="$PROJECT_DIR$/src/carsharing/utils/serializable.py" />
+        <option value="$PROJECT_DIR$/src/carsharing/review/reviewer.py" />
+        <option value="$PROJECT_DIR$/src/external/car_system/car_system.py" />
+        <option value="$PROJECT_DIR$/src/external/car_system/car_system_mock.py" />
+        <option value="$PROJECT_DIR$/src/external/db/db.py" />
+        <option value="$PROJECT_DIR$/src/server/templates/check_autos_form.html" />
         <option value="$PROJECT_DIR$/src/external/db/db_mock.py" />
+        <option value="$PROJECT_DIR$/src/external/user_interaction/user_interaction_mock.py" />
+        <option value="$PROJECT_DIR$/src/carsharing/auto/automobile.py" />
+        <option value="$PROJECT_DIR$/src/server/templates/check_autos.html" />
+        <option value="$PROJECT_DIR$/src/server/templates/reserve_auto.html" />
+        <option value="$PROJECT_DIR$/src/server/server.py" />
+        <option value="$PROJECT_DIR$/src/carsharing/car_pool/car_pool.py" />
+        <option value="$PROJECT_DIR$/src/carsharing/user/user.py" />
+        <option value="$PROJECT_DIR$/src/server/templates/finish_ride.html" />
+        <option value="$PROJECT_DIR$/src/server/templates/index.html" />
+        <option value="$PROJECT_DIR$/src/server/main.py" />
+        <option value="$PROJECT_DIR$/src/server/templates/start_ride.html" />
+        <option value="$PROJECT_DIR$/src/server/templates/messages.html" />
+        <option value="$PROJECT_DIR$/src/carsharing/ride/ride_state_machine.py" />
+        <option value="$PROJECT_DIR$/src/carsharing/utils/zone.py" />
+        <option value="$PROJECT_DIR$/src/carsharing/ride/ride.py" />
       </list>
     </option>
   </component>
@@ -279,13 +278,6 @@
               <item name="CarSharing" type="b2602c69:ProjectViewProjectNode" />
               <item name="CarSharing" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="carsharing" type="462c0819:PsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CarSharing" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CarSharing" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="external" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -299,14 +291,6 @@
               <item name="CarSharing" type="b2602c69:ProjectViewProjectNode" />
               <item name="CarSharing" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="external" type="462c0819:PsiDirectoryNode" />
-              <item name="db" type="462c0819:PsiDirectoryNode" />
-              <item name="files" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CarSharing" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CarSharing" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="server" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -314,7 +298,7 @@
               <item name="CarSharing" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -332,9 +316,9 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/carsharing/utils" />
       <recent name="$PROJECT_DIR$/src/external/db/files" />
       <recent name="$PROJECT_DIR$/src/server" />
-      <recent name="$PROJECT_DIR$/src/carsharing/utils" />
     </key>
   </component>
   <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
@@ -631,7 +615,14 @@
       <option name="project" value="LOCAL" />
       <updated>1513844211160</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="now files are somewhere">
+      <created>1514103195191</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1514103195191</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -659,6 +650,28 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32901832" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16458334" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30420712" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -674,45 +687,11 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/src/server/main.py</url>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
       <option name="time" value="3" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/user/user_pool.py" />
-    <entry file="file://$PROJECT_DIR$/src/review/review_queue.py" />
-    <entry file="file://$PROJECT_DIR$/src/user/user_info.py" />
-    <entry file="file://$PROJECT_DIR$/contrib/user_interaction/user_interaction.py" />
-    <entry file="file://$PROJECT_DIR$/src/user/user.py" />
-    <entry file="file://$PROJECT_DIR$/src/ride/ride_state_machine.py" />
-    <entry file="file://$PROJECT_DIR$/src/car_pool/car_pool.py" />
-    <entry file="file://$PROJECT_DIR$/src/carsharing/utils/coordinate.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="22" lean-forward="false" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/carsharing/utils/zone.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="19" lean-forward="true" selection-start-line="0" selection-start-column="19" selection-end-line="0" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/external/map_service/map_service.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="39" lean-forward="false" selection-start-line="8" selection-start-column="39" selection-end-line="8" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/external/map_service/map_service_mock.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -734,20 +713,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/external/user_interaction/user_interaction.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/carsharing/ride/ride_state_machine.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -762,74 +727,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/server/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="24" lean-forward="true" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/server/templates/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="16" lean-forward="false" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/server/templates/messages.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="16" lean-forward="false" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/server/templates/signup.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="7" lean-forward="false" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/server/templates/actions.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="7" lean-forward="true" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/carsharing/car_pool/car_pool.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="5" column="23" lean-forward="true" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/local/lib/python3.5/dist-packages/pymongo/database.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1173">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/carsharing/auto/automobile.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="17" column="24" lean-forward="true" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/external/car_system/car_system_mock.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="24" lean-forward="true" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
           <folding />
         </state>
       </provider>
@@ -868,14 +769,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/carsharing/checkers/coords_checker.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="9" column="47" lean-forward="false" selection-start-line="9" selection-start-column="47" selection-end-line="9" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/carsharing/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -892,14 +785,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/external/user_interaction/user_interaction_mock.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="26" lean-forward="false" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/carsharing/utils/singleton.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -912,24 +797,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/server/configurator.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="29" lean-forward="false" selection-start-line="21" selection-start-column="29" selection-end-line="21" selection-end-column="29" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/carsharing/review/reviewer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="8" lean-forward="false" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="8" />
           <folding />
         </state>
       </provider>
@@ -966,14 +833,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/carsharing/user/user.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="22" column="27" lean-forward="false" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/carsharing/user/user_pool.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
@@ -1006,41 +865,247 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/server/main.py">
+    <entry file="file://$PROJECT_DIR$/src/carsharing/utils/serializable.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="14" column="86" lean-forward="true" selection-start-line="14" selection-start-column="86" selection-end-line="14" selection-end-column="86" />
+        <state relative-caret-position="119">
+          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/carsharing/review/reviewer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/external/car_system/car_system.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="35" lean-forward="false" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/external/car_system/car_system_mock.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
           <folding>
-            <element signature="e#0#87#0" expanded="true" />
+            <element signature="e#0#34#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/external/db/db.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+        <state relative-caret-position="221">
+          <caret line="13" column="36" lean-forward="false" selection-start-line="13" selection-start-column="36" selection-end-line="13" selection-end-column="36" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/external/db/db_mock.py">
+    <entry file="file://$PROJECT_DIR$/src/external/user_interaction/user_interaction.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="37" column="34" lean-forward="false" selection-start-line="37" selection-start-column="34" selection-end-line="37" selection-end-column="34" />
+        <state relative-caret-position="323">
+          <caret line="19" column="19" lean-forward="false" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/server/configurator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="21" column="29" lean-forward="false" selection-start-line="21" selection-start-column="29" selection-end-line="21" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/server/templates/actions.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="7" lean-forward="true" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/external/user_interaction/user_interaction_mock.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="23" lean-forward="false" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/server/templates/check_autos_form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/server/templates/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="12" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/carsharing/auto/automobile.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="3" lean-forward="true" selection-start-line="12" selection-start-column="3" selection-end-line="14" selection-end-column="16" />
           <folding>
-            <element signature="e#0#25#0" expanded="true" />
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/carsharing/car_pool/car_pool.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="12" column="36" lean-forward="true" selection-start-line="12" selection-start-column="36" selection-end-line="12" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/server/templates/check_messages.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="7" lean-forward="false" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/server/templates/signup.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="13" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/server/templates/reserve_auto.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="37" lean-forward="false" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/server/templates/finish_ride.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="7" lean-forward="true" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/server/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="7" lean-forward="true" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/carsharing/user/user.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="59" column="26" lean-forward="true" selection-start-line="59" selection-start-column="26" selection-end-line="59" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/server/templates/start_ride.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="7" lean-forward="true" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/server/templates/messages.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="6" lean-forward="true" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/server/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="114" column="47" lean-forward="false" selection-start-line="114" selection-start-column="47" selection-end-line="114" selection-end-column="47" />
+          <folding>
+            <element signature="e#0#87#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/server/server.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="366">
-          <caret line="54" column="48" lean-forward="true" selection-start-line="54" selection-start-column="48" selection-end-line="54" selection-end-column="48" />
+        <state relative-caret-position="170">
+          <caret line="34" column="41" lean-forward="true" selection-start-line="34" selection-start-column="41" selection-end-line="34" selection-end-column="41" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/carsharing/utils/coordinate.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="8" lean-forward="false" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/carsharing/ride/ride_state_machine.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="63" column="34" lean-forward="false" selection-start-line="63" selection-start-column="34" selection-end-line="63" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/external/db/db_mock.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-433">
+          <caret line="26" column="41" lean-forward="false" selection-start-line="26" selection-start-column="41" selection-end-line="26" selection-end-column="41" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/carsharing/checkers/coords_checker.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="8" column="36" lean-forward="true" selection-start-line="8" selection-start-column="36" selection-end-line="8" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/carsharing/utils/zone.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="38" lean-forward="true" selection-start-line="10" selection-start-column="38" selection-end-line="10" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/carsharing/ride/ride.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="451">
+          <caret line="37" column="65" lean-forward="true" selection-start-line="37" selection-start-column="65" selection-end-line="37" selection-end-column="65" />
+          <folding />
         </state>
       </provider>
     </entry>

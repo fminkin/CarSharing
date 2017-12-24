@@ -25,4 +25,5 @@ class UserInteractionMock(IUserInteraction):
         self._save_message("receive_supplied", "")
 
     def _save_message(self, message, body):
+        print(message, body, self.message_storage)
         self.message_storage.append({"message": message, "body": body})
