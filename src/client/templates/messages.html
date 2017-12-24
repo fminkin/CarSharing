@@ -2,9 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Messages</title>
 </head>
 <body>
-
+    {% for message in messages %}
+        <div>{{ message.body }}</div>
+    {% endfor %}
 </body>
 </html>

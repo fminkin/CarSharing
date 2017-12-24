@@ -6,7 +6,7 @@ from ..carsharing.car_pool import CarPool
 from ..contrib.map_service.map_service import IMapService
 from ..contrib.map_service.map_service_mock import MapServiceMock
 from ..carsharing.review.review_queue import ReviewQueue
-from ..carsharing.user.user import EUserStatus, user_status_to_str
+from ..carsharing.user.user import EUserStatus, user_status_to_str, User
 from ..carsharing.user.user_pool import UserPool
 from ..carsharing.utils.zone import Zone
 from ..contrib.user_interaction import IUserInteraction, UserInteractionMock
@@ -38,7 +38,7 @@ class Server(object):
                                                                         self.database)
 
     def signup_user_handle(self, user_info):
-        user = User()
+        user = User(user_info)
         result = user.sign_up(self.review_queue)
         if result:
             user.user_interaction.receive_message(user_status_to_str(EUserStatus.NOT_APPROVED))
@@ -46,6 +46,13 @@ class Server(object):
             self.database.save_user(user)
         else:
             user.user_interaction.receive_message(user_status_to_str(EUserStatus.NOT_APPROVED))
+
+    def check_account_handle(self, account):
+        return account.username in self.database.users and self.database.users[account.username].password == account.password
+
+    def get_messages_handle(self, username):
+        if username in self.database.messages:
+            return self.database.messages[username]
 
     def book_ride_action_handle(self, username, coordinates):
         user = self.database.load_user(username)

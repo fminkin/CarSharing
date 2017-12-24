@@ -1,40 +1,70 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect, url_for, g, flash, session
+import sys
+from os import path
+sys.path.append(path.dirname(path.dirname(path.dirname(path.abspath(__file__)))))
 
-# from src.carsharing import UserInfo
-
-import json
-# from src.server.main import Server
-
+from src.carsharing import UserInfo, Account
+from src.server.main import Server
 import argparse
+import json
 
 app = Flask(__name__)
+app.secret_key = 'some secret key'
 
 @app.route("/signup", methods=["POST", "GET"])
 def signup():
     if request.method == "POST":
-        print(request.form['username'])
-        print(request.form['password'])
-        print(request.files)
-        UserInfo(request.form['username'], request.form['password'], 123)
-        # server.signup_user_handle(UserInfo)
-
+        user_info = UserInfo(request.form['username'], request.form['password'], request.files)
+        server.signup_user_handle(user_info)
+        session['username'] = user_info.username
+        return redirect('/index')
     return render_template('signup.html')
 
 
+@app.route("/login", methods=["POST", "GET"])
+def login():
+    if request.method == "POST":
+        account = Account(request.form['username'], request.form['password'])
+        if server.check_account_handle(account):
+            session['username'] = account.username
+            print(session['username'])
+            return redirect('/index')
+        else:
+            flash("Wrong password and/or username")
+    return render_template('login.html')
+
+
+@app.route("/messages", methods=["POST", "GET"])
+def messages():
+    if g.account is None:
+        return redirect('/login')
+    return render_template('messages.html', messages=server.get_messages_handle(g.account.username))
+
+
+@app.before_request
+def load_account():
+    if "username" in session and session["username"]:
+        account = Account(session["username"])
+    else:
+        account = None
+
+    g.account = account
+
+
+@app.route("/index", methods=["POST", "GET"])
 @app.route("/", methods=["POST", "GET"])
 def index_page():
-    if request.method == "POST":
-        text = request.form["text"]
-
     return render_template('index.html')
 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument('--config', type=str)
+    parser.add_argument('--config', type=str, default="config.json")
+    parser.add_argument('--dbconfig', type=str, default="dbconfig.json")
+    parser.add_argument('--zones-config', type=str, default="zones-config.json")
 
     args = parser.parse_args()
-    # server = Server(args)
+    server = Server(args)
 
     with open(args.config) as f:
         config = json.load(f)

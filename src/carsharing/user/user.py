@@ -6,12 +6,12 @@ from ..user.user_pool import UserPool
 
 
 class EUserStatus(Enum):
-    NOT_APPROVED = 0,
+    NOT_APPROVED = 0
     APPROVED = 1
 
 
 def user_status_to_str(user_status):
-    if user_status.NOT_APPROVED:
+    if user_status == EUserStatus.NOT_APPROVED:
         return "We are sorry, but You have note been approved!"
     else: # approved
         return "Congratulations, You have been approved!"
