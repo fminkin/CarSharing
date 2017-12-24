@@ -1,6 +1,0 @@
-{
-  "cars": "db/cars",
-  "users": "db/users",
-  "reviewers": "db/reviewers",
-  "messages": "db/messages"
-}

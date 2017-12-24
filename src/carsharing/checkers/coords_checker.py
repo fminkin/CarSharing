@@ -5,11 +5,9 @@ from src.carsharing.checkers.checker_type import ECheckerType
 
 class CoordsChecker(Checker):
     def __init__(self, ride_state_machine, car_system):
-        super().__init__()
+        super().__init__(ride_state_machine)
         self.ride_zones = Zone.ride_zones
         self.parking_zones = Zone.parking_zones
-        # refactor this ???
-        self.ride_state_machine = ride_state_machine
         self.car_system = car_system
         self.car_system.subscribe_on_coords_change(self)
 

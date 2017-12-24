@@ -1,13 +1,17 @@
-from ..utils.singleton import Singleton
+from random import choice
 
 
-class ReviewQueue(metaclass=Singleton):
+class ReviewQueue():
+    instance = None
+
     def __init__(self, reviewers):
         self.reviewers = reviewers
 
-    def submit(self, user):
-        # we are not implementing this
-        # cause the mechanism of choosing reviewer and
-        # review itself is too complex
-        return True
+    @staticmethod
+    def configure(reviewers):
+        ReviewQueue.instance = ReviewQueue(reviewers)
 
+    def submit(self, user):
+        if self.reviewers:
+            return choice(self.reviewers).review_documents(user.user_info.images)
+        return False

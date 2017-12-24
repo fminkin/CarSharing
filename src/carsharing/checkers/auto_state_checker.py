@@ -4,11 +4,9 @@ from .checker_type import ECheckerType
 
 class AutoStateChecker(Checker):
     def __init__(self, ride_state_machine, car_system):
-        super().__init__()
+        super().__init__(ride_state_machine)
         self.fuel_thr = 0.1
-        # may be load from config?
         self.liquid_thr = 0.1
-        self.ride_state_machine = ride_state_machine
         self.car_system = car_system
         self.car_system.subscribe_on_auto_state_change(self)
 

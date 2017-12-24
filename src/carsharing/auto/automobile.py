@@ -1,5 +1,5 @@
 from enum import Enum
-from src.contrib.car_system.car_system_mock import CarSystemMock
+from src.external.car_system.car_system_mock import CarSystemMock
 
 class EAutomobileState(Enum):
     OCCUPIED = 0,
@@ -17,6 +17,7 @@ class Automobile(object):
     def __init__(self):
         self.mark = None
         self.capacity = None
+        self.license_plate = None
         self.license_plate = None
         self.car_system = CarSystemMock()
         self.vehicle_class = None

@@ -1,6 +1,6 @@
 
 
-class DataBase(object):
+class IDatabase(object):
 
     def __init__(self, config_file):
         pass

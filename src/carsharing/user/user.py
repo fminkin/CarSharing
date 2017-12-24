@@ -1,7 +1,7 @@
 from enum import Enum
 
 from ..ride.ride_state_machine import RideStateMachine
-from src.contrib.user_interaction import IUserInteraction
+from src.external.user_interaction import IUserInteraction
 from ..user.user_pool import UserPool
 
 

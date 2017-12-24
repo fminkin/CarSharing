@@ -4,7 +4,7 @@ from src.carsharing.checkers.checker_type import ECheckerType
 from .ride import Ride
 from ..checkers.auto_state_checker import AutoStateChecker
 from ..checkers.coords_checker import CoordsChecker
-from src.contrib.map_service.map_service import IMapService
+from src.external.map_service.map_service import IMapService
 from ..car_pool.car_pool import CarPool
 from src.carsharing.utils.coordinate import TimedCoordinate
 import time

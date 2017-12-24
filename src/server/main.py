@@ -1,79 +1,79 @@
+from flask import Flask, render_template, request, redirect, url_for, g, flash, session
+
+
+from src.carsharing import UserInfo, Account
+from src.server.server import Server
 import argparse
 import json
 
-from ..contrib.db import DataBaseMock
-from ..carsharing.car_pool import CarPool
-from ..contrib.map_service.map_service import IMapService
-from ..contrib.map_service.map_service_mock import MapServiceMock
-from ..carsharing.review.review_queue import ReviewQueue
-from ..carsharing.user.user import EUserStatus, user_status_to_str, User
-from ..carsharing.user.user_pool import UserPool
-from ..carsharing.utils.zone import Zone
-from ..contrib.user_interaction import IUserInteraction, UserInteractionMock
+app = Flask(__name__)
+app.secret_key = 'some secret key'
+
+@app.route("/signup", methods=["POST", "GET"])
+def signup():
+    if request.method == "POST":
+        user_info = UserInfo(request.form['username'], request.form['password'], None)
+        server.signup_user_handle(user_info)
+        session['username'] = user_info.username
+        return redirect('/index')
+    return render_template('signup.html')
 
 
-class Server(object):
-    def __init__(self, args):
-        # configure database
-        self.database = DataBaseMock(args.dbconfig)
-
-        # configure CarPool
-        CarPool.configure(self.database.load_cars())
-
-        # configure ReviewQueue
-        self.review_queue = ReviewQueue(self.database.load_reviewers())
-
-        # configure zones
-        with open(args.zones_config) as zones_config_file:
-            parking_coords, ride_coords = json.load(zones_config_file)
-            Zone.configure_zones(parking_coords, ride_coords)
-
-        # configure user_pool
-        UserPool.configure()
-
-        # configure map service
-        IMapService.configure(MapServiceMock())
-
-        IUserInteraction.get_by_user = lambda user: UserInteractionMock(user.user_info.username,
-                                                                        self.database)
-
-    def signup_user_handle(self, user_info):
-        user = User(user_info)
-        result = user.sign_up(self.review_queue)
-        if result:
-            user.user_interaction.receive_message(user_status_to_str(EUserStatus.NOT_APPROVED))
-            # add user to db
-            self.database.save_user(user)
+@app.route("/login", methods=["POST", "GET"])
+def login():
+    if request.method == "POST":
+        account = Account(request.form['username'], request.form['password'])
+        if server.check_account_handle(account):
+            session['username'] = account.username
+            print(session['username'])
+            return redirect('/index')
         else:
-            user.user_interaction.receive_message(user_status_to_str(EUserStatus.NOT_APPROVED))
+            flash("Wrong password and/or username")
+    return render_template('login.html')
 
-    def check_account_handle(self, account):
-        return account.username in self.database.users and self.database.users[account.username].password == account.password
 
-    def get_messages_handle(self, username):
-        if username in self.database.messages:
-            return self.database.messages[username]
+@app.route("/messages", methods=["POST", "GET"])
+def messages():
+    if g.account is None:
+        return redirect('/login')
+    return render_template('messages.html', messages=server.get_messages_handle(g.account.username))
 
-    def book_ride_action_handle(self, username, coordinates):
-        user = self.database.load_user(username)
-        user.check_available_autos(coordinates)
 
-    def reserve_auto_handle(self, username, automobile, charge_rate):
-        user = self.database.load_user(username)
-        user.reserve_auto(automobile, charge_rate)
+@app.before_request
+def load_account():
+    if "username" in session and session["username"]:
+        account = Account(session["username"])
+    else:
+        account = None
 
-    def start_ride_action_handle(self, username, photos):
-        user = self.database.load_user(username)
-        user.start_ride(photos)
+    g.account = account
 
-    def finish_ride_action_handle(self, username):
-        user = self.database.load_user(username)
-        user.finish_ride()
+
+@app.route("/index", methods=["POST", "GET"])
+@app.route("/", methods=["POST", "GET"])
+def index_page():
+    return render_template('index.html')
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser()
-    parser.add_argument('--dbconfig', type=str)
-    parser.add_argument('--zones-config', dest='zones_config', type=str)
+    from src.carsharing.review.reviewer import Reviewer
+    import pickle
+    with open('../external/db/files/reviewers', 'wb') as f:
+        pickle.dump({"alice": Reviewer(), "bob": Reviewer()}, f)
 
-    server = Server(parser.parse_args())
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--config', type=str, default="config/config.json")
+    parser.add_argument('--dbconfig', type=str, default="config/dbconfig.json")
+    parser.add_argument('--zones-config', type=str, default="config/zones-config.json")
+
+    args = parser.parse_args()
+    server = Server(args)
+
+    with open(args.config) as f:
+        config = json.load(f)
+
+    UPLOAD_FOLDER = config["upload_folder"]
+    SERVER_ADDRESS = config["server_adress"]
+    SERVER_PORT = config["server_port"]
+    app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+    app.run(host=SERVER_ADDRESS, port=SERVER_PORT, debug=True)
